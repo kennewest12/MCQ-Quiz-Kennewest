@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Quiz – Kennewest (v2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-gray-900/90 border-b border-gray-800 backdrop-blur-md"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 py-2">
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
+          >
+            Kennewest
+          </h1>
+          <p class="text-sm text-gray-300 md:hidden ml-2">
+            Welcome to Kennewest Game
+          </p>
+          <div class="hidden md:block">
+            <p class="text-gray-300">Welcome to Kennewest Game</p>
+          </div>
+          <div class="hidden md:flex items-center space-x-4">
+            <button
+              class="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-lg hover:border-blue-400 transition"
+            >
+              Highest score <span id="highest-score">0</span>
+            </button>
+            <button
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-400 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition"
+            >
+              Score <span id="current-score">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile buttons -->
+        <div class="md:hidden flex justify-center gap-2 px-2 pb-2 mt-2">
+          <button
+            class="flex-1 px-3 py-2 text-sm font-medium text-white border border-gray-600 rounded-lg hover:border-blue-400 transition"
+          >
+            Highest score <span id="highest-score">0</span>
+          </button>
+          <button
+            class="flex-1 px-3 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-400 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition"
+          >
+            Score <span id="current-score">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main quiz container -->
+    <!-- v2: added id to separate quiz screen from start screen -->
+    <section
+      class="max-w-[860px] mx-auto min-h-screen pt-[180px] sm:pt-32 flex items-start justify-center px-4"
+    >
+      <div
+        class="bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-[6px] w-full"
+      >
+        <!-- v2: START SCREEN -->
+        <div id="start-screen" class="text-center p-6">
+          <h1 class="text-2xl font-bold mb-4">Welcome to the Quiz Game</h1>
+          <p class="mb-6">Test your knowledge with 20 questions.</p>
+          <button
+            id="start-btn"
+            class="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition"
+          >
+            Start Quiz
+          </button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-4">
+            <h1 id="quiz-title" class="text-xl sm:text-2xl font-bold">
+              Quick Quiz
+            </h1>
+            <span
+              id="progress"
+              class="text-xs text-gray-400 border border-[rgba(255,255,255,0.12)] px-3 py-1.5 rounded-full"
+            >
+              Question 1 of 20
+            </span>
+          </div>
+
+          <!-- Question -->
+          <h2 id="question" class="text-lg sm:text-xl font-semibold mb-6"></h2>
+
+          <!-- Answer options -->
+          <ul id="options" class="space-y-4 list-none p-0"></ul>
+
+          <!-- Feedback -->
+          <p id="feedback" class="mt-6 text-sm text-gray-300"></p>
+
+          <!-- Navigation Buttons -->
+          <div
+            class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 h-24"
+          >
+            <!-- Previous Button -->
+            <button
+              id="prev-btn"
+              class="px-6 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800 transition w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+            >
+              Prev
+            </button>
+
+            <!-- Try Again Button (centered, hidden by default) -->
+            <!-- Try Again Button (v2: shown on end screen only) -->
+            <button
+              id="try-again-btn"
+              class="px-6 py-2 bg-gradient-to-r from-red-400 to-pink-600 text-white rounded-lg hover:from-red-600 hover:to-pink-700 transition hidden w-full sm:w-auto my-2 sm:my-0"
+            >
+              Try Again
+            </button>
+
+            <!-- Next Question Button -->
+            <button
+              id="next-btn"
+              class="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition w-full sm:w-auto"
+            >
+              Next Question
+            </button>
+          </div>
+        </div>
+
+        <!-- v2: END SCREEN -->
+        <div id="end-screen" class="hidden text-center p-6">
+          <h2 class="text-2xl font-bold mb-4">🎯 Game Over!</h2>
+          <p class="mb-2">Your score: <span id="final-score">0</span></p>
+          <p id="end-message" class="mb-4 font-semibold"></p>
+          <button
+            id="retry-btn"
+            class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- v2: Updated script to handle start screen, end screen, and next button behavior -->
+    <script src="./script.js"></script>
+  </body>
+</html>
