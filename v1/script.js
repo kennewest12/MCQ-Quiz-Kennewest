@@ -168,7 +168,7 @@ function loadQuestion() {
   if (userAnswers[currentQuestionIndex] !== null) {
     const selected = userAnswers[currentQuestionIndex];
     feedbackEl.textContent =
-      selected === current.answer 
+      selected === current.answer
         ? "✅ Correct!"
         : `❌ Wrong! Correct answer: ${current.options[current.answer]}`;
   }

@@ -1,13 +1,13 @@
 # MCQ Quiz 🎮 – Kennewest
 
 A multiple-choice quiz game built with **HTML**, **TailwindCSS**, and **JavaScript**.  
-The game challenges users with 20 questions and keeps track of scores.
+The game challenges users with 20 random questions (from a larger pool) and keeps track of scores.
 
 ---
 
 ## 🚀 Features
 
-- 🎯 20 multiple-choice questions
+- 🎯 Random 20 multiple-choice questions (from 60+ pool)
 - 📊 Tracks current score and highest score
 - 📱 Fully responsive UI (TailwindCSS)
 - ✅ Instant feedback (correct / wrong answers)
@@ -27,7 +27,7 @@ The game challenges users with 20 questions and keeps track of scores.
 
 ---
 
-### **v2** (Latest Update)
+### **v2**
 
 - 🔗 [Play v2 here](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2)
 - ➕ Added **Start Screen** with "Start Quiz" button
@@ -39,10 +39,25 @@ The game challenges users with 20 questions and keeps track of scores.
 
 ---
 
-### **v2.1** (In Progress 🚧)
+### **v2.1** (Latest Update)
 
-- 🔗 [Play v2.1 here](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2.1) _(coming soon)_
-- 🆕 Enhanced **question bank** (more than 20, random 20 per game)
+- 🔗 [Play v2.1 here](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2.1)
+- 🆕 **Question Bank Expansion** → 60+ questions, random 20 per game
+- 🆕 **Shuffle System** → questions randomized each session
+- 🆕 **Finish Button** → appears only on last question
+- 🆕 **End Button** → quit anytime with confirmation
+- 🆕 **Confirmation Prompts** → "Are you sure?" before finishing or ending
+- 🆕 **Highest Score Tracker** → saves best score across sessions
+- 🆕 **Navigation Upgrade** → supports Previous/Next while keeping answered states
+- 🎨 Small UI refinements for buttons & feedback messages
+
+---
+
+### 🚀 Next Version (Planned)
+
+- More question categories (Science, Tech, General Knowledge, etc.)
+- Timer for each question
+- Leaderboard or scoring system across sessions
 
 ---
 
@@ -52,7 +67,7 @@ The game challenges users with 20 questions and keeps track of scores.
 
 - [Play v1](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v1)
 - [Play v2](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2)
-- [Play v2.1](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2.1) _(coming soon)_
+- [Play v2.1](https://kennewest12.github.io/MCQ-Quiz-Kennewest/v2.1)
 
 ### 💻 Run Locally
 
